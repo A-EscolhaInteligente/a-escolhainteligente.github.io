@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha Inteligente | Links Oficiais Shopee</title>
+    <title>Escolha Inteligente | Portais Oficiais</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos Globais - Paleta Clean e Sofisticada */
         :root {
-            --primary-color: #fcfcfc; /* Fundo da página */
-            --text-color: #2c2c2c; /* Cor do texto principal */
-            --accent-color: #f2e3d5; /* Bege claro sofisticado para os botões */
-            --accent-hover: #e5d2c0; /* Tom um pouco mais escuro para o hover */
-            --shadow-color: rgba(0, 0, 0, 0.04);
-            --font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --bg-color: #fcfcfc;
+            --text-main: #2c2c2c;
+            --accent-premium: #f2e3d5;
+            --accent-hover: #e5d2c0;
+            --accent-disabled: #f5ece4;
+            --font-base: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
         }
 
         body {
-            font-family: var(--font-family);
-            background-color: var(--primary-color);
-            color: var(--text-color);
+            font-family: var(--font-base);
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
             display: flex;
             justify-content: center;
@@ -32,89 +31,112 @@
             width: 90%;
             max-width: 420px;
             text-align: center;
-            padding: 35px 20px;
+            padding: 40px 24px;
             background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px var(--shadow-color);
+            border-radius: 28px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
         }
 
-        /* Foto de Perfil IA */
+        /* Foto de Perfil */
         .profile-img {
-            width: 100px;
-            height: 100px;
+            width: 105px;
+            height: 105px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            margin-bottom: 18px;
         }
 
         .profile-name {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             letter-spacing: -0.5px;
         }
 
         .profile-description {
-            font-size: 14px;
+            font-size: 14.5px;
             color: #666666;
-            margin: 0 0 32px 0;
-            line-height: 1.5;
+            margin: 0 0 36px 0;
+            line-height: 1.6;
         }
 
-        /* Categorias com Ícones */
-        .link-category {
-            font-size: 12px;
+        .menu-label {
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #777777;
-            margin-top: 32px;
-            margin-bottom: 14px;
-            text-align: left;
-            padding-left: 6px;
+            color: #999999;
+            margin-bottom: 16px;
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px; /* Espaço entre o ícone e o texto */
         }
 
-        .link-category i {
-            color: #b59b85; /* Tom bronze/bege escuro para o ícone da categoria */
-            font-size: 14px;
-        }
-
-        /* Botões de Links */
-        .link-btn {
+        /* Botões dos Ambientes */
+        .ambient-btn {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: var(--accent-color);
-            color: var(--text-color);
+            background-color: var(--accent-premium);
+            color: var(--text-main);
             text-decoration: none;
-            padding: 16px 20px;
-            border-radius: 14px;
-            margin-bottom: 12px;
-            font-size: 15px;
-            font-weight: 500;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 14px;
+            font-size: 16px;
+            font-weight: 600;
             transition: all 0.25s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+            cursor: pointer;
         }
 
-        .link-btn:hover {
+        .ambient-btn:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
         }
 
-        .link-btn i.arrow {
-            font-size: 12px;
-            opacity: 0.5;
+        /* Estilo sutil para os que estão em breve */
+        .ambient-btn.coming-soon {
+            background-color: var(--accent-disabled);
+            opacity: 0.85;
         }
 
-        /* Rodapé */
-        .footer {
-            margin-top: 40px;
+        .ambient-btn.coming-soon:hover {
+            transform: none;
+            background-color: var(--accent-disabled);
+        }
+
+        .ambient-btn i.icon-left {
+            font-size: 20px;
+            margin-right: 16px;
+            color: #b59b85;
+            width: 24px;
+            text-align: center;
+        }
+
+        .ambient-btn .btn-text {
+            flex-grow: 1;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .coming-soon-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #b59b85;
+            letter-spacing: 1px;
+            margin-top: 2px;
+            font-weight: 700;
+        }
+
+        .ambient-btn i.arrow-right {
             font-size: 12px;
-            color: #b5b5b5;
+            opacity: 0.4;
+        }
+
+        .footer {
+            margin-top: 45px;
+            font-size: 11px;
+            color: #c0c0c0;
             letter-spacing: 0.5px;
         }
     </style>
@@ -125,57 +147,38 @@
         
         <h1 class="profile-name">Escolha Inteligente</h1>
         <p class="profile-description">
-            Sua curadoria premium de produtos na internet.<br>
-            Tech • Casa • Moda
+            Sua curadoria exclusiva de produtos na internet.<br>
+            Explore nossos cenários inspiradores abaixo.
         </p>
 
-        <div class="link-category">
-            <i class="fa-solid fa-laptop"></i> Tecnologia & Setup
+        <div class="menu-label">Selecione um Espaço</div>
+        
+        <a href="casa-sala.html" class="ambient-btn">
+            <i class="fa-solid fa-house-chimney icon-left"></i>
+            <span class="btn-text">Espaço Casa & Decoração</span>
+            <i class="fa-solid fa-chevron-right arrow-right"></i>
+        </a>
+        
+        <div class="ambient-btn coming-soon" onclick="alert('O Espaço Tecnologia está sendo decorado com produtos incríveis e estará disponível em breve!')">
+            <i class="fa-solid fa-laptop-code icon-left"></i>
+            <span class="btn-text">
+                <span>Espaço Tecnologia & Setup</span>
+                <span class="coming-soon-badge">Em breve</span>
+            </span>
+            <i class="fa-solid fa-lock arrow-right" style="font-size: 11px; opacity: 0.3;"></i>
         </div>
-        
-        <a href="#" class="link-btn" target="_blank">
-            <span>Fone de Ouvido Bluetooth Premium</span>
-            <i class="fa-solid fa-chevron-right arrow"></i>
-        </a>
-        
-        <a href="#" class="link-btn" target="_blank">
-            <span>Organizador de Cabos Minimalista</span>
-            <i class="fa-solid fa-chevron-right arrow"></i>
-        </a>
 
-
-        <div class="link-category">
-            <i class="fa-solid fa-house-chic"></i> Casa & Decoração
+        <div class="ambient-btn coming-soon" onclick="alert('O Espaço Moda & Estilo está preparando uma seleção exclusiva e estará disponível em breve!')">
+            <i class="fa-solid fa-shirt icon-left"></i>
+            <span class="btn-text">
+                <span>Espaço Moda, Estilo & Corpo</span>
+                <span class="coming-soon-badge">Em breve</span>
+            </span>
+            <i class="fa-solid fa-lock arrow-right" style="font-size: 11px; opacity: 0.3;"></i>
         </div>
-        
-        <a href="#" class="link-btn" target="_blank">
-            <span>Luminária de Mesa Design Scandinavian</span>
-            <i class="fa-solid fa-chevron-right arrow"></i>
-        </a>
-        
-        <a href="#" class="link-btn" target="_blank">
-            <span>Conjunto de Potes Organizadores Herméticos</span>
-            <i class="fa-solid fa-chevron-right arrow"></i>
-        </a>
-
-
-        <div class="link-category">
-            <i class="fa-solid fa-shirt"></i> Moda & Estilo
-        </div>
-        
-        <a href="#" class="link-btn" target="_blank">
-            <span>Blazer Alfaiataria Feminino (Look do Perfil)</span>
-            <i class="fa-solid fa-chevron-right arrow"></i>
-        </a>
-        
-        <a href="#" class="link-btn" target="_blank">
-            <span>Bolsa Tiracolo em Couro Ecológico</span>
-            <i class="fa-solid fa-chevron-right arrow"></i>
-        </a>
-
 
         <div class="footer">
-            Links seguros e verificados manualmente.
+            © Escolha Inteligente • Plataforma Premium Verificada
         </div>
     </div>
 </body>
