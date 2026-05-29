@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha Inteligente | Menu Interativo</title>
+    <title>Escolha Inteligente | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #f8f6f2; /* Fundo bege bem clarinho e aconchegante */
-            --text-main: #2b2b2b;
+            --bg-color: #f7f5f0;
+            --text-main: #252525;
             --accent-gold: #b59b85;
             --button-bg: #ffffff;
             --font-base: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -33,117 +33,80 @@
 
         .container {
             width: 90%;
-            max-width: 420px;
+            max-width: 400px;
             text-align: center;
-            padding: 35px 24px;
+            padding: 40px 24px;
             background: #ffffff;
             border-radius: 32px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
         }
 
-        /* Identificação do Canal/Perfil */
         .profile-img {
-            width: 95px;
-            height: 95px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             margin-bottom: 16px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
         .profile-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             letter-spacing: -0.5px;
         }
 
-        .profile-description {
-            font-size: 14px;
-            color: #666666;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        /* Título do Menu Estilo Construção */
-        .menu-label {
-            font-size: 12px;
+        .profile-subtitle {
+            font-size: 13px;
+            color: #888888;
+            margin-bottom: 32px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #a0a0a0;
-            margin-bottom: 16px;
-            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        /* Botões de Navegação dos Cômodos (Estilo The Sims Confortável) */
-        .room-btn {
+        .ambient-btn {
             display: flex;
             align-items: center;
             background-color: var(--button-bg);
             color: var(--text-main);
             text-decoration: none;
             padding: 18px 20px;
-            border-radius: 20px;
+            border-radius: 18px;
             margin-bottom: 14px;
-            border: 2px solid #eae6df;
+            border: 1px solid #eaeaea;
             transition: all 0.2s ease;
-            cursor: pointer;
         }
 
-        /* Efeito visual ao passar o dedo/mouse */
-        .room-btn:hover {
+        .ambient-btn:hover {
             border-color: var(--accent-gold);
-            background-color: #fdfcfb;
+            background-color: #fdfbf7;
             transform: translateY(-1px);
         }
 
-        .room-btn i.icon-left {
-            font-size: 22px;
+        .ambient-btn i.icon-left {
+            font-size: 20px;
             margin-right: 16px;
             color: var(--accent-gold);
-            width: 28px;
+            width: 24px;
             text-align: center;
         }
 
-        .room-btn .btn-text {
+        .ambient-btn span {
             flex-grow: 1;
             text-align: left;
-            display: flex;
-            flex-direction: column;
+            font-size: 15px;
+            font-weight: 600;
         }
 
-        .room-title {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .room-subtitle {
+        .ambient-btn i.arrow-right {
             font-size: 12px;
-            color: #888888;
-            margin-top: 2px;
-        }
-
-        .badge-soon {
-            font-size: 9px;
-            text-transform: uppercase;
-            color: #b59b85;
-            letter-spacing: 1px;
-            font-weight: 700;
-            background: #f7f5f0;
-            padding: 2px 6px;
-            border-radius: 6px;
-            margin-top: 4px;
-            align-self: flex-start;
-        }
-
-        .room-btn i.arrow-right {
-            font-size: 12px;
-            color: #b8b8b8;
+            color: #cccccc;
         }
 
         .footer {
-            margin-top: 35px;
+            margin-top: 40px;
             font-size: 11px;
             color: #c0c0c0;
         }
@@ -152,43 +115,29 @@
 <body>
     <div class="container">
         <img src="perfil.png" alt="Escolha Inteligente" class="profile-img">
-        
         <h1 class="profile-name">Escolha Inteligente</h1>
-        <p class="profile-description">
-            Toque em um dos cômodos abaixo para explorar as melhores decorações e móveis para sua casa.
-        </p>
-
-        <div class="menu-label">Selecione o Cômodo</div>
+        <div class="profile-subtitle">Achadinhos Exclusivos</div>
         
-        <a href="casa-sala.html" class="room-btn">
-            <i class="fa-solid fa-couch icon-left"></i>
-            <span class="btn-text">
-                <span class="room-title">Sala de Estar</span>
-                <span class="room-subtitle">Sofás, painéis e decorações premium</span>
-            </span>
+        <a href="casa.html" class="ambient-btn">
+            <i class="fa-solid fa-house icon-left"></i>
+            <span>Espaço Casa & Decoração</span>
             <i class="fa-solid fa-chevron-right arrow-right"></i>
         </a>
         
-        <div class="room-btn" style="opacity: 0.75;" onclick="alert('O Espaço Quarto está sendo planejado com camas e closets lindíssimos. Fique de olho, em breve estará no ar!')">
-            <i class="fa-solid fa-bed icon-left"></i>
-            <span class="btn-text">
-                <span class="room-title">Quarto Principal</span>
-                <span class="badge-soon">Em breve</span>
-            </span>
-            <i class="fa-solid fa-lock arrow-right" style="font-size: 11px; opacity: 0.5;"></i>
+        <div class="ambient-btn" style="opacity: 0.6;" onclick="alert('O espaço de Moda está sendo decorado com tendências incríveis e estará disponível em breve.')">
+            <i class="fa-solid fa-shirt icon-left"></i>
+            <span>Moda & Tendências (Em breve)</span>
+            <i class="fa-solid fa-lock arrow-right" style="font-size:11px;"></i>
         </div>
 
-        <div class="room-btn" style="opacity: 0.75;" onclick="alert('O Espaço Cozinha trará os utensílios mais modernos e práticos da internet. Disponível em breve!')">
-            <i class="fa-solid fa-kitchen-set icon-left"></i>
-            <span class="btn-text">
-                <span class="room-title">Cozinha & Área Gourmet</span>
-                <span class="badge-soon">Em breve</span>
-            </span>
-            <i class="fa-solid fa-lock arrow-right" style="font-size: 11px; opacity: 0.5;"></i>
+        <div class="ambient-btn" style="opacity: 0.6;" onclick="alert('O espaço de Tecnologia está sendo decorado com produtos incríveis e estará disponível em breve.')">
+            <i class="fa-solid fa-laptop icon-left"></i>
+            <span>Tecnologia & Gadgets (Em breve)</span>
+            <i class="fa-solid fa-lock arrow-right" style="font-size:11px;"></i>
         </div>
 
         <div class="footer">
-            © Escolha Inteligente • Decoração Interativa
+            © Escolha Inteligente
         </div>
     </div>
 </body>
