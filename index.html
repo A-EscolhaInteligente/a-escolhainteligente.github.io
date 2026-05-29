@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha Inteligente | Links Oficiais Shopee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Estilos Globais - Paleta Clean e Sofisticada */
         :root {
             --primary-color: #fcfcfc; /* Fundo da página */
             --text-color: #2c2c2c; /* Cor do texto principal */
             --accent-color: #f2e3d5; /* Bege claro sofisticado para os botões */
-            --accent-hover: #e5d2c0; /* Tom um pouco mais escuro para quando passar o mouse */
+            --accent-hover: #e5d2c0; /* Tom um pouco mais escuro para o hover */
             --shadow-color: rgba(0, 0, 0, 0.04);
             --font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
@@ -62,26 +63,36 @@
             line-height: 1.5;
         }
 
-        /* Categorias */
+        /* Categorias com Ícones */
         .link-category {
-            font-size: 11px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #999999;
-            margin-top: 28px;
-            margin-bottom: 12px;
+            color: #777777;
+            margin-top: 32px;
+            margin-bottom: 14px;
             text-align: left;
-            padding-left: 4px;
+            padding-left: 6px;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espaço entre o ícone e o texto */
+        }
+
+        .link-category i {
+            color: #b59b85; /* Tom bronze/bege escuro para o ícone da categoria */
+            font-size: 14px;
         }
 
         /* Botões de Links */
         .link-btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background-color: var(--accent-color);
             color: var(--text-color);
             text-decoration: none;
-            padding: 16px;
+            padding: 16px 20px;
             border-radius: 14px;
             margin-bottom: 12px;
             font-size: 15px;
@@ -92,6 +103,11 @@
         .link-btn:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
+        }
+
+        .link-btn i.arrow {
+            font-size: 12px;
+            opacity: 0.5;
         }
 
         /* Rodapé */
@@ -105,7 +121,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://i.ibb.co/L5h8z9M/curadora-ia-premium.png" alt="Escolha Inteligente" class="profile-img">
+        <img src=https://instagram.fplu34-1.fna.fbcdn.net/v/t51.82787-19/707433707_17913876891396105_2161973776104787776_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43NjcuYzIifQ&_nc_ht=instagram.fplu34-1.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2gER3TiYTfslN1vjNHnv1h-vX0XYM6EalClpCMiHa1TTDr-bU8A5pWVJ4WKZDuHmnuOMcTFF2LYE9uR0h9rlEusQ&_nc_ohc=xFxkeZ3-jb0Q7kNvwEBmkm6&_nc_gid=l9ePA7roF5Q1ZjJ7rV4a7A&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af4tGnRjwwYpks-KYh2HHrVBpNn7x5zvD57glaqqQG3dsQ&oe=6A1F7C1C&_nc_sid=7a9f4b alt="Escolha Inteligente" class="profile-img">
         
         <h1 class="profile-name">Escolha Inteligente</h1>
         <p class="profile-description">
@@ -113,25 +129,49 @@
             Tech • Casa • Moda
         </p>
 
-        <div class="link-category">Tecnologia & Setup</div>
+        <div class="link-category">
+            <i class="fa-solid fa-laptop"></i> Tecnologia & Setup
+        </div>
         
-        <a href="#" class="link-btn" target="_blank">Fone de Ouvido Bluetooth Premium</a>
+        <a href="#" class="link-btn" target="_blank">
+            <span>Fone de Ouvido Bluetooth Premium</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
         
-        <a href="#" class="link-btn" target="_blank">Organizador de Cabos Minimalista</a>
+        <a href="#" class="link-btn" target="_blank">
+            <span>Organizador de Cabos Minimalista</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
 
 
-        <div class="link-category">Casa & Decoração</div>
+        <div class="link-category">
+            <i class="fa-solid fa-house-chic"></i> Casa & Decoração
+        </div>
         
-        <a href="#" class="link-btn" target="_blank">Luminária de Mesa Design Scandinavian</a>
+        <a href="#" class="link-btn" target="_blank">
+            <span>Luminária de Mesa Design Scandinavian</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
         
-        <a href="#" class="link-btn" target="_blank">Conjunto de Potes Organizadores Herméticos</a>
+        <a href="#" class="link-btn" target="_blank">
+            <span>Conjunto de Potes Organizadores Herméticos</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
 
 
-        <div class="link-category">Moda & Estilo</div>
+        <div class="link-category">
+            <i class="fa-solid fa-shirt"></i> Moda & Estilo
+        </div>
         
-        <a href="#" class="link-btn" target="_blank">Blazer Alfaiataria Feminino (Look do Perfil)</a>
+        <a href="#" class="link-btn" target="_blank">
+            <span>Blazer Alfaiataria Feminino (Look do Perfil)</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
         
-        <a href="#" class="link-btn" target="_blank">Bolsa Tiracolo em Couro Ecológico</a>
+        <a href="#" class="link-btn" target="_blank">
+            <span>Bolsa Tiracolo em Couro Ecológico</span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+        </a>
 
 
         <div class="footer">
