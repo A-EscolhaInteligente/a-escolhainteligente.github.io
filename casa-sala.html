@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha Inteligente | Living Room Premium</title>
+    <title>Escolha Inteligente | Sala de Estar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #f7f5f0;
+            --bg-color: #f8f6f2;
             --text-main: #252525;
             --accent-gold: #b59b85;
             --card-bg: #ffffff;
@@ -39,6 +39,7 @@
             padding-bottom: 30px;
         }
 
+        /* Botão Voltar Bem Visível */
         .top-nav {
             padding: 20px 24px;
             display: flex;
@@ -49,16 +50,11 @@
         .back-btn {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: opacity 0.2s;
-        }
-
-        .back-btn:hover {
-            opacity: 0.7;
         }
 
         .header-section {
@@ -75,17 +71,18 @@
 
         .category-subtitle {
             font-size: 14px;
-            color: #777777;
+            color: #666666;
             line-height: 1.5;
         }
 
+        /* Banner Conceito */
         .scene-wrapper {
             position: relative;
             margin: 0 24px 24px 24px;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            height: 280px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            height: 240px;
         }
 
         .scene-bg {
@@ -101,7 +98,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4));
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -109,24 +106,14 @@
         }
 
         .scene-tag {
-            background: rgba(255, 255, 255, 0.9);
-            color: #000;
-            padding: 6px 12px;
+            background: #ffffff;
+            color: #000000;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             align-self: flex-start;
-            margin-bottom: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .scene-instruction {
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 500;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .showcase-label {
@@ -142,37 +129,37 @@
             padding: 0 24px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
+        /* Cartão de Item Intuitivo */
         .product-card {
             display: flex;
             align-items: center;
             background: var(--card-bg);
-            border: 1px solid #eaeaea;
-            border-radius: 18px;
-            padding: 14px;
+            border: 2px solid #eeebe5;
+            border-radius: 20px;
+            padding: 16px;
             text-decoration: none;
             color: var(--text-main);
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
         }
 
         .product-card:hover {
             border-color: var(--accent-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(181, 155, 133, 0.08);
+            background: #fffdfa;
         }
 
         .item-icon-box {
-            width: 50px;
-            height: 50px;
-            background: #fdfbf7;
+            width: 48px;
+            height: 48px;
+            background: #fcfbfa;
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 16px;
-            border: 1px solid #f2ede4;
+            border: 1px solid #efebe4;
         }
 
         .item-icon-box i {
@@ -184,19 +171,17 @@
             flex-grow: 1;
         }
 
-        .item-category {
-            font-size: 11px;
-            color: #999999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
-            font-weight: 500;
-        }
-
         .item-title {
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1.3;
+        }
+
+        .item-action-text {
+            font-size: 12px;
+            color: var(--accent-gold);
+            margin-top: 3px;
+            font-weight: 600;
         }
 
         .action-arrow {
@@ -211,15 +196,11 @@
 
         .product-card:hover .action-arrow {
             background: var(--accent-gold);
-        }
-
-        .product-card:hover .action-arrow i {
             color: #ffffff;
         }
 
         .action-arrow i {
             font-size: 11px;
-            color: var(--text-main);
         }
 
         .footer {
@@ -234,77 +215,76 @@
     <div class="container">
         <div class="top-nav">
             <a href="index.html" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i> Voltar ao início
+                <i class="fa-solid fa-arrow-left"></i> Voltar aos cômodos
             </a>
         </div>
 
         <div class="header-section">
-            <h1 class="category-title">Living Room</h1>
-            <p class="category-subtitle">Móveis, plantas marcantes e detalhes que transformam a sala comum em um ambiente instagramável e luxuoso.</p>
+            <h1 class="category-title">Sala de Estar</h1>
+            <p class="category-subtitle">Ambiente aconchegante e sofisticado montado com escolhas inteligentes.</p>
         </div>
 
         <div class="scene-wrapper">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=cover" alt="Sala de Estar Luxo" class="scene-bg">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=cover" alt="Sala de Estar Decorada" class="scene-bg">
             <div class="scene-overlay">
-                <div class="scene-tag"><i class="fa-solid fa-couch"></i> Sala de Estar</div>
-                <div class="scene-instruction">Toque nos elementos abaixo para montar o visual ➔</div>
+                <div class="scene-tag"><i class="fa-solid fa-couch"></i> Inspiração do Espaço</div>
             </div>
         </div>
 
-        <div class="showcase-label">Componentes do Espaço</div>
+        <div class="showcase-label">Móveis e Itens da Sala</div>
 
         <div class="items-grid">
             
             <a href="https://s.shopee.com.br/2BC63nTKIC" target="_blank" class="product-card">
                 <div class="item-icon-box"><i class="fa-solid fa-tv"></i></div>
                 <div class="item-info">
-                    <div class="item-category">Móvel Principal</div>
-                    <div class="item-title">Painel de TV Off-White & Freijó Premium</div>
+                    <div class="item-title">Painel para TV Ripado com Nichos</div>
+                    <div class="item-action-text">Ver produto na Shopee ➔</div>
                 </div>
                 <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </a>
 
             <a href="https://s.shopee.com.br/AKXnmqSVAm" target="_blank" class="product-card">
-                <div class="item-icon-box"><i class="fa-solid fa-chair"></i></div>
+                <div class="item-icon-box"><i class="fa-solid fa-border-all"></i></div>
                 <div class="item-info">
-                    <div class="item-category">Assento & Conforto</div>
-                    <div class="item-title">Poltrona Decorativa Minimalista Slim</div>
+                    <div class="item-title">Tapete 2,00 X 1,50 Peludo</div>
+                    <div class="item-action-text">Ver produto na Shopee ➔</div>
                 </div>
                 <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </a>
 
             <a href="https://s.shopee.com.br/6L1f1YF62g" target="_blank" class="product-card">
-                <div class="item-icon-box"><i class="fa-solid fa-seedling"></i></div>
+                <div class="item-icon-box"><i class="fa-solid fa-couch"></i></div>
                 <div class="item-info">
-                    <div class="item-category">Vegetação Permanente</div>
-                    <div class="item-title">Árvore Bambu da Sorte Artificial Premium</div>
+                    <div class="item-title">Sofá retrátil e Reclinável 3 Lugares</div>
+                    <div class="item-action-text">Ver produto na Shopee ➔</div>
                 </div>
                 <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </a>
 
             <a href="https://s.shopee.com.br/7KuCDQsTlw" target="_blank" class="product-card">
-                <div class="item-icon-box"><i class="fa-solid fa-border-all"></i></div>
+                <div class="item-icon-box"><i class="fa-solid fa-circle-dot"></i></div>
                 <div class="item-info">
-                    <div class="item-category">Base de Conforto</div>
-                    <div class="item-title">Tapete Soft Geométrico Boho Off-White</div>
+                    <div class="item-title">Espelho de Luxo em Couro Orgânico</div>
+                    <div class="item-action-text">Ver produto na Shopee ➔</div>
                 </div>
                 <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </a>
 
             <a href="https://s.shopee.com.br/3qKK31vZsD" target="_blank" class="product-card">
-                <div class="item-icon-box"><i class="fa-solid fa-table"></i></div>
                 <div class="item-info">
-                    <div class="item-category">Apoio de Centro</div>
-                    <div class="item-title">Mesa de Centro Orgânica & Fluida Luxo</div>
+                <div class="item-icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <div class="item-title">Estante com Rack, 2 portas e Painel</div>
+                    <div class="item-action-text">Ver produto na Shopee ➔</div>
                 </div>
                 <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </a>
 
             <a href="https://s.shopee.com.br/9pbXC8pYI5" target="_blank" class="product-card">
-                <div class="item-icon-box"><i class="fa-solid fa-box-archive"></i></div>
+                <div class="item-icon-box"><i class="fa-solid fa-seedling"></i></div>
                 <div class="item-info">
-                    <div class="item-category">Móvel de Canto</div>
-                    <div class="item-title">Mesa de Cabeceira / Apoio Lateral Clean</div>
+                    <div class="item-title">Planta Artificial Bambu</div>
+                    <div class="item-action-text">Ver produto na Shopee ➔</div>
                 </div>
                 <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
             </a>
@@ -312,7 +292,7 @@
         </div>
 
         <div class="footer">
-            © Escolha Inteligente • Links de Afiliada Verificados
+            © Escolha Inteligente • Links Oficiais de Afiliada
         </div>
     </div>
 </body>
