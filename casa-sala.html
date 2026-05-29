@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha Inteligente | Living Room Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f7f5f0; /* Bege ultra clean */
+            --text-main: #252525;
+            --accent-gold: #b59b85;
+            --card-bg: #ffffff;
+            --font-base: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-base);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: #ffffff;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+            padding-bottom: 30px;
+        }
+
+        /* Botão Voltar Fixo no Topo */
+        .top-nav {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+        }
+
+        .back-btn {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .back-btn:hover {
+            opacity: 0.7;
+        }
+
+        /* Header da Categoria */
+        .header-section {
+            padding: 0 24px 20px 24px;
+            text-align: left;
+        }
+
+        .category-title {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .category-subtitle {
+            font-size: 14px;
+            color: #777777;
+            line-height: 1.5;
+        }
+
+        /* BANNER IMERSIVO DA SALA (Simulador Visual) */
+        .scene-wrapper {
+            position: relative;
+            margin: 0 24px 24px 24px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            height: 280px;
+        }
+
+        /* Imagem de fundo realista de uma sala bege de luxo com plantas */
+        .scene-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Camada interativa por cima da imagem */
+        .scene-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .scene-tag {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-self: flex-start;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .scene-instruction {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        /* Vitrine de Itens (Estilo Menu de Construção/Decoração) */
+        .showcase-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999999;
+            margin: 0 24px 16px 24px;
+            font-weight: 700;
+        }
+
+        .items-grid {
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Cartão de Item Chique */
+        .product-card {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid #eaeaea;
+            border-radius: 18px;
+            padding: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.25s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(181, 155, 133, 0.08);
+        }
+
+        .item-icon-box {
+            width: 50px;
+            height: 50px;
+            background: #fdfbf7;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            border: 1px solid #f2ede4;
+        }
+
+        .item-icon-box i {
+            font-size: 20px;
+            color: var(--accent-gold);
+        }
+
+        .item-info {
+            flex-grow: 1;
+        }
+
+        .item-category {
+            font-size: 11px;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            font-weight: 500;
+        }
+
+        .item-title {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .action-arrow {
+            width: 32px;
+            height: 32px;
+            background: #f7f5f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .product-card:hover .action-arrow {
+            background: var(--accent-gold);
+        }
+
+        .product-card:hover .action-arrow i {
+            color: #ffffff;
+        }
+
+        .action-arrow i {
+            font-size: 11px;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 11px;
+            color: #c0c0c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Voltar ao início
+            </a>
+        </div>
+
+        <div class="header-section">
+            <h1 class="category-title">Living Room</h1>
+            <p class="category-subtitle">Móveis, plantas marcantes e detalhes que transformam a sala comum em um ambiente instagramável e luxuoso.</p>
+        </div>
+
+        <div class="scene-wrapper">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=cover" alt="Sala de Estar Luxo" class="scene-bg">
+            <div class="scene-overlay">
+                <div class="scene-tag"><i class="fa-solid fa-couch"></i> Cenário 01</div>
+                <div class="scene-instruction">Toque nos elementos abaixo para montar o visual ➔</div>
+            </div>
+        </div>
+
+        <div class="showcase-label">Componentes do Espaço</div>
+
+        <div class="items-grid">
+            
+            <a href="https://s.shopee.com.br/2BC63nTKIC" target="_blank" class="product-card">
+                <div class="item-icon-box"><i class="fa-solid fa-seedling"></i></div>
+                <div class="item-info">
+                    <div class="item-category">Vegetação Permanente</div>
+                    <div class="item-title">Árvore Bambu da Sorte Premium</div>
+                </div>
+                <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <a href="https://s.shopee.com.br/AKXnmqSVAm" target="_blank" class="product-card">
+                <div class="item-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                <div class="item-info">
+                    <div class="item-category">Iluminação de Destaque</div>
+                    <div class="item-title">Luminária de Chão Minimalista Arqueada</div>
+                </div>
+                <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <a href="https://s.shopee.com.br/6L1f1YF62g" target="_blank" class="product-card">
+                <div class="item-icon-box"><i class="fa-solid fa-border-all"></i></div>
+                <div class="item-info">
+                    <div class="item-category">Base de Conforto</div>
+                    <div class="item-title">Tapete Soft Geometric Off-White</div>
+                </div>
+                <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <a href="https://s.shopee.com.br/7KuCDQsTlw" target="_blank" class="product-card">
+                <div class="item-icon-box"><i class="fa-solid fa-table"></i></div>
+                <div class="item-info">
+                    <div class="item-category">Móvel Central</div>
+                    <div class="item-title">Mesa de Centro Orgânica & Fluida</div>
+                </div>
+                <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <a href="https://s.shopee.com.br/3qKK31vZsD" target="_blank" class="product-card">
+                <div class="item-icon-box"><i class="fa-solid fa-box-archive"></i></div>
+                <div class="item-info">
+                    <div class="item-category">Organização & Estilo</div>
+                    <div class="item-title">Mesa de Cabeceira / Apoio Lateral Clean</div>
+                </div>
+                <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <a href="https://s.shopee.com.br/9pbXC8pYI5" target="_blank" class="product-card">
+                <div class="item-icon-box"><i class="fa-solid fa-mattress-pillow"></i></div>
+                <div class="item-info">
+                    <div class="item-category">Acessórios Têxteis</div>
+                    <div class="item-title">Manta Decorativa Soft para Sofá</div>
+                </div>
+                <div class="action-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © Escolha Inteligente • Links de Afiliada Verificados
+        </div>
+    </div>
+</body>
+</html>
